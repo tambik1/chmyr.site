@@ -1,6 +1,6 @@
 <?php
 
-namespace Traits;
+namespace Chmyr\Traits;
 
 trait SingletonTrait
 {

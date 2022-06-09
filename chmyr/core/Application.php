@@ -2,7 +2,6 @@
 
 namespace Chmyr\core;
 
-use Chmyr\Helpers\Session;
 use Chmyr\Logger\Logger;
 
 class Application
@@ -24,8 +23,8 @@ class Application
 		$this->config = Config::getInstance();
 
 
-		// Trying logging with session
-		Session::start();
+		// TODO реализовать сессию
+		// Session::start();
 		//TODO реализовать авторизацию
 		// Auth::tryLoginFromSession();
 	}

@@ -2,7 +2,7 @@
 
 namespace Chmyr\core;
 
-use Traits\SingletonTrait;
+use Chmyr\Traits\SingletonTrait;
 
 class Config
 {

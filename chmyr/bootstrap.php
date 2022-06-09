@@ -14,14 +14,8 @@ $config->loadConfigs(dirname(__DIR__) . "/chmyr/config");
 // require_once "routes/admin.php";
 // require_once "routes/api.php";
 
-// If it's a development environment include testing routes
-if($config->get('environment')['isDev'])
-{
-	require_once "routes/test.php";
-}
-
 // Error handling override
-$error_handler = set_error_handler('\Aura\Logger\Logger::catchError');
+$error_handler = set_error_handler('\Chmyr\Logger\Logger::catchError');
 
 // Database config injection
 if($dbConfig = $config->get('database'))
