@@ -29,23 +29,6 @@ class Application
 		// Auth::tryLoginFromSession();
 	}
 
-	private function handleCallback($callback): Response
-	{
-		if ($callback === null)
-		{
-			return $this->response->error(404);
-		}
-
-		// If callback is a string, it's supposed to be a name of static page
-		if (is_string($callback))
-		{
-			return $this->response->text(
-				View::renderView($this->defaultLayout,$callback)
-			);
-		}
-		return $this->response;
-	}
-
 	public function run(): void
 	{
 		['callback' => $callback, 'params' => $params] = Router::route(
@@ -65,5 +48,61 @@ class Application
 				->error(500)
 				->flush();
 		}
+	}
+	public function setController(Controller $controller): void
+	{
+		$this->controller = $controller;
+	}
+
+	private function handleCallback($callback): Response
+	{
+		if ($callback === null)
+		{
+			return $this->response->error(404);
+		}
+
+		// If callback is a string, it's supposed to be a name of static page
+		if (is_string($callback))
+		{
+			return $this->response->text(
+				View::renderView($this->defaultLayout,$callback)
+			);
+		}
+		return $this->response;
+	}
+
+	private function handleCallbackResult($result): void
+	{
+		if (is_string($result))
+		{
+			$this->response->text($result);
+		}
+		elseif (is_array($result))
+		{
+			$this->response->json($result);
+		}
+	}
+
+	private function formCallbackArguments($reflected, $params): array
+	{
+		$args = [];
+
+		foreach ($reflected->getParameters() as $parameter)
+		{
+			if (isset($params[$parameter->getName()]))
+			{
+				$args[] = $params[$parameter->getName()];
+			}
+			elseif (!$parameter->isDefaultValueAvailable())
+			{
+				throw new \RuntimeException("No value for parameter $" . $parameter->getName());
+			}
+			else
+			{
+				$args[] = $parameter->getDefaultValue();
+			}
+		}
+
+		return $args;
 	}
 }
