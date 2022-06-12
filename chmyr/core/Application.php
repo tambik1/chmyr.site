@@ -2,16 +2,24 @@
 
 namespace Chmyr\Core;
 
+
 use Chmyr\Logger\Logger;
 
 class Application
 {
 	public static string $ROOT_DIR;
+
 	public static Application $app;
+
 	public Request $request;
 	public Response $response;
+
 	public Config $config;
-	public string $defaultLayout = 'main';
+
+	public string $defaultLayout = "main";
+	public ?Controller $controller;
+
+	public string $currentAction = "";
 
 	public function __construct(string $rootDir)
 	{
@@ -20,15 +28,19 @@ class Application
 
 		$this->request = new Request();
 		$this->response = new Response();
+
 		$this->config = Config::getInstance();
 
 
-		// TODO реализовать сессию
+//todo реализовать сессию и авторизацию
 		// Session::start();
-		//TODO реализовать авторизацию
 		// Auth::tryLoginFromSession();
 	}
 
+	/**
+	 *
+	 * @return void
+	 */
 	public function run(): void
 	{
 		['callback' => $callback, 'params' => $params] = Router::route(
@@ -49,40 +61,72 @@ class Application
 				->flush();
 		}
 	}
+
 	public function setController(Controller $controller): void
 	{
 		$this->controller = $controller;
 	}
 
-	private function handleCallback($callback): Response
+	/**
+	 * @throws \ReflectionException
+	 * @throws \Exception
+	 */
+	private function handleCallback($callback, $params): Response
 	{
 		if ($callback === null)
 		{
 			return $this->response->error(404);
 		}
 
-		// If callback is a string, it's supposed to be a name of static page
 		if (is_string($callback))
 		{
 			return $this->response->text(
-				View::renderView($this->defaultLayout,$callback)
+				View::renderView(self::$app->defaultLayout, 'Chmyr',$callback)
 			);
 		}
+
+		if (is_array($callback))
+		{
+			/** @var Controller $controller */
+			$controller = new $callback[0]($this->request, $this->response);
+			$controller->action = $callback[1];
+
+			Logger::info("Trace: {$this->request->getPath()} for action {$controller->action}");
+
+
+
+			if(!$this->response->isAllowedControllerExecution())
+			{
+				return $this->response;
+			}
+
+			$this->setController($controller);
+			$this->currentAction = $controller->action;
+
+			$callback[0] = $controller;
+
+			$reflected = new \ReflectionMethod($callback[0], $callback[1]);
+			$args = $this->formCallbackArguments($reflected, $params);
+
+			return $callback(...$args);
+		}
+
+		if ($callback instanceof \Closure)
+		{
+			$reflected = new \ReflectionFunction($callback);
+			$args = $this->formCallbackArguments($reflected, $params);
+
+			$result = $callback(...$args);
+
+			return $this->response;
+		}
+
 		return $this->response;
 	}
 
-	private function handleCallbackResult($result): void
-	{
-		if (is_string($result))
-		{
-			$this->response->text($result);
-		}
-		elseif (is_array($result))
-		{
-			$this->response->json($result);
-		}
-	}
-
+	/**
+	 * @throws \Exception
+	 */
 	private function formCallbackArguments($reflected, $params): array
 	{
 		$args = [];
@@ -104,5 +148,17 @@ class Application
 		}
 
 		return $args;
+	}
+
+	private function handleCallbackResult($result): void
+	{
+		if (is_string($result))
+		{
+			$this->response->text($result);
+		}
+		elseif (is_array($result))
+		{
+			$this->response->json($result);
+		}
 	}
 }
