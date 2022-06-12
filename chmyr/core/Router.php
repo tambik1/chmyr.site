@@ -1,6 +1,6 @@
 <?php
 
-namespace chmyr\core;
+namespace Chmyr\Core;
 
 class Router
 {

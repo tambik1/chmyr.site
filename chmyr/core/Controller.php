@@ -1,5 +1,5 @@
 <?php
-namespace Chmyr\core;
+namespace Chmyr\Core;
 
 
 class Controller

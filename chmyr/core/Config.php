@@ -1,6 +1,6 @@
 <?php
 
-namespace Chmyr\core;
+namespace Chmyr\Core;
 
 use Chmyr\Traits\SingletonTrait;
 

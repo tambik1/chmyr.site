@@ -18,10 +18,12 @@ $config->loadConfigs(dirname(__DIR__) . "/chmyr/config");
 $error_handler = set_error_handler('\Chmyr\Logger\Logger::catchError');
 
 // Database config injection
-if($dbConfig = $config->get('database'))
-{
-	\Aura\Database\Database::setConfig($dbConfig);
-}
+//TODO подумать о реализации конфигурационного класса работы с БД
+
+// if($dbConfig = $config->get('database'))
+// {
+// 	\Chmyr\Database\Database::setConfig($dbConfig);
+// }
 
 
 
