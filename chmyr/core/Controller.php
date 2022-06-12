@@ -6,7 +6,7 @@ class Controller
 {
 	public string $layoutName = "main";
 	public string $action = "";
-	public string $title = "Aura";
+	public string $title = "Chmyr";
 
 	protected Request $request;
 	protected Response $response;
