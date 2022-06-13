@@ -10,9 +10,9 @@ $config = Config::getInstance();
 $config->loadConfigs(dirname(__DIR__) . "/chmyr/config");
 
 // Include routes
-// require_once "routes/public.php";
-// require_once "routes/admin.php";
-// require_once "routes/api.php";
+require_once "routes/public.php";
+require_once "routes/authorized.php";
+require_once "routes/api.php";
 
 // Error handling override
 $error_handler = set_error_handler('\Chmyr\Logger\Logger::catchError');
