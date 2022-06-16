@@ -14,14 +14,14 @@ class View
 		$data = array_merge($data, ['content' => $viewContent, 'title' => $title]);
 
 		return static::renderTemplate(
-			"layout/$layoutName.php",
+			"layout\\$layoutName.php",
 			$data
 		);
 	}
 
 	public static function renderTemplate(string $path, array $templateData = []): string
 	{
-		$fullPath = Application::$ROOT_DIR . "/chmyr/views/" . $path;
+		$fullPath = Application::$ROOT_DIR . "\\chmyr.site\\chmyr\\views\\" . $path;
 		if (!file_exists($fullPath))
 		{
 			return "";

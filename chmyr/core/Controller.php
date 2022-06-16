@@ -1,6 +1,6 @@
 <?php
 namespace Chmyr\Core;
-
+use Chmyr\Core\Middlewares\Middleware;
 
 class Controller
 {

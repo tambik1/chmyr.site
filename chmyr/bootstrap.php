@@ -2,12 +2,12 @@
 
 // Auto-loading
 require_once "Autoloader.php";
+require_once 'chmyr/helper/Session.php';
 spl_autoload_register("\\Autoloader::loader");
-require_once 'chmyr/traits/SingletonTrait.php';
+
 // Load configuration files
 use Chmyr\core\Config;
-$config = Config::getInstance();
-$config->loadConfigs(dirname(__DIR__) . "/chmyr/config");
+
 
 // Include routes
 require_once "routes/public.php";

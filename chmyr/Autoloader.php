@@ -6,8 +6,7 @@ class Autoloader
 	public static function loader(string $className)
 	{
 		$prefix = 'Chmyr\\';
-
-		$baseDir = __DIR__ . '/';
+		$baseDir = __DIR__ . '\\';
 
 		$len = strlen($prefix);
 		if(strncmp($prefix, $className, $len) !== 0)

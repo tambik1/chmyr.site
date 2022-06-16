@@ -2,11 +2,9 @@
 
 namespace Chmyr\Core;
 
-use Chmyr\Traits\SingletonTrait;
 
 class Config
 {
-	use SingletonTrait;
 	public const CONFIG_EXT = ".php";
 
 	protected array $configMap = array();

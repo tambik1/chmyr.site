@@ -2,7 +2,7 @@
 
 namespace Chmyr\Logger;
 
-use Chmyr\Traits\SingletonTrait;
+// use Chmyr\Traits\SingletonTrait;
 use Exception;
 use RuntimeException;
 
@@ -10,7 +10,6 @@ define('LOG_DIR', '../log/');
 
 class Logger
 {
-	use SingletonTrait;
 
 	protected static $logFile;
 	protected static $file;

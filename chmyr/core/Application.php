@@ -2,8 +2,8 @@
 
 namespace Chmyr\Core;
 
-
 use Chmyr\Logger\Logger;
+use Chmyr\Helpers\Session;
 
 class Application
 {
@@ -29,11 +29,8 @@ class Application
 		$this->request = new Request();
 		$this->response = new Response();
 
-		$this->config = Config::getInstance();
-
-
 //todo реализовать сессию и авторизацию
-		// Session::start();
+		Session::start();
 		// Auth::tryLoginFromSession();
 	}
 
@@ -81,7 +78,7 @@ class Application
 		if (is_string($callback))
 		{
 			return $this->response->text(
-				View::renderView(self::$app->defaultLayout, 'Chmyr',$callback)
+				View::renderView(self::$app->defaultLayout,'Chmyr',$callback)
 			);
 		}
 
