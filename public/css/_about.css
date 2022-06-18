@@ -1,0 +1,19 @@
+.content_container{
+	height: 1000px;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+}
+.about_title{
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	color: #000;
+	margin: 25px;
+}
+.about_description{
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	color: #000;
+}
