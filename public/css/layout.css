@@ -5,8 +5,7 @@ header{
 	align-content: center;
 	justify-content: space-around;
 	align-items: center;
-	background: rgb(209,0,85);
-	background: radial-gradient(circle, rgba(209,0,85,0.37888658881521353) 0%, rgba(197,35,255,0.50773812943146) 100%);
+	background: rgb(243 137 0 / 27%);
 	border-bottom: #00000025 2px solid;
 }
 .header_logo__img{
@@ -21,7 +20,7 @@ header{
 	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
 	margin: 10px;
-	color: #0037ffad;
+	color: #00000099;
 	position: relative;
 	cursor: pointer;
 	text-decoration: none;
@@ -34,7 +33,7 @@ header{
 	bottom: -3px;
 	width: 0;
 	height: 2px;
-	background-color: rgba(0, 55, 255, 0.6);
+	background-color: #00000099;
 	transition: width 0.5s;
 }
 .header_menu_points__point:hover:after {
@@ -45,7 +44,7 @@ header{
 	left: 0;
 	bottom: -3px;
 	height: 2px;
-	background-color: rgba(0, 55, 255, 0.6);
+	background-color: #00000099;
 	transition: width 0.5s;
 }
 * {box-sizing: border-box;}
@@ -58,7 +57,7 @@ header{
 	width: 100%;
 	height: 42px;
 	padding-left: 10px;
-	border: 2px solid #80338eb0;
+	border: 2px solid rgb(255 134 49 / 22%);
 	border-radius: 5px;
 	outline: none;
 	background: #ece3edb0;
@@ -71,7 +70,7 @@ header{
 	width: 42px;
 	height: 42px;
 	border: none;
-	background: #80338eb0;
+	background: rgb(255 134 49 / 50%);
 	border-radius: 0 5px 5px 0;
 	cursor: pointer;
 }
@@ -99,9 +98,8 @@ header{
 .header_user_menu_fio_name,.header_user_menu_fio_surname{
 	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
-	color: #0006b3;
+	color: #00000099;
 }
 .content{
-	background: rgb(209,0,85);
-	background: radial-gradient(circle, rgba(209,0,85,0.37888658881521353) 0%, rgba(197,35,255,0.50773812943146) 100%);
+	background:rgb(255 134 49 / 22%);
 }

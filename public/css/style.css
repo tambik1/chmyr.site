@@ -2,3 +2,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Open+Sans:wght@400;500;600&display=swap');
 @import "layout.css";
 @import "_about.css";
+@import "_posts.css";
+@import "_favorite.css";

@@ -9,6 +9,7 @@ spl_autoload_register("\\Autoloader::loader");
 use Chmyr\core\Config;
 
 
+
 // Include routes
 require_once "routes/public.php";
 require_once "routes/authorized.php";
