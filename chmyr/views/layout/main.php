@@ -30,7 +30,7 @@
 			</div>
 		</div>
 		<div class="header_menu_search">
-			<form class="header_menu_search__form" action="#" method="get">
+			<form class="header_menu_search__form" action="/search" method="get">
 				<input class="header_menu_search__input" placeholder="Искать здесь..." type="search">
 				<button class="header_menu_search__button" type="submit"></button>
 			</form>

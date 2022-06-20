@@ -4,7 +4,7 @@
 	font-size: 28px;
 	color: #00000099
 }
-.favorites_container {
+.searches_container {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -13,13 +13,13 @@
 	margin: 20px;
 	justify-content: space-around;
 }
-.favorite_container{
+.search_container{
 	margin: 20px;
 	border-radius: 30px;
 	background-color: #ffffff9c;
 	box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
-.favorite_menu_author{
+.search_menu_author{
 	display: flex;
 	flex-direction: row;
 	position: relative;
@@ -28,44 +28,44 @@
 	align-items: center;
 	border-bottom: solid 1px #ddd;
 }
-.favorite_menu_author__photo{
+.search_menu_author__photo{
 	margin: 15px;
 	height: 40px;
 	width: 40px;
 	border-radius: 30px;
 }
-.favorite_menu_author__name,.favorite_menu_author__surname{
+.search_menu_author__name,.search_menu_author__surname{
 	margin: 5px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
 	color: #00000099;
 }
-.favorite_menu_author__surname{
+.search_menu_author__surname{
 	margin-left: 0;
 }
-.favorite_menu_author__date{
+.search_menu_author__date{
 	margin-left: 15px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
 	color: #00000099;
 }
-.favorite_menu_settings{
+.search_menu_settings{
 	position: absolute;
 	top: 27px;
 	right: 25px;
 }
-.favorite_title__a{
+.search_title__a{
 	text-decoration: none;
 	color: black;
 	transition: .5s linear;
 }
-.favorite_title__a:hover{
+.search_title__a:hover{
 	color: #ddd;
 }
-.favorite_title:hover{
+.search_title:hover{
 	color: #ddd;
 }
-.favorite_title{
+.search_title{
 	margin: 10px;
 	text-align: center;
 	max-width: 350px;
@@ -76,7 +76,7 @@
 	text-overflow: ellipsis;
 	transition: .5s linear;
 }
-.favorite_description{
+.search_description{
 	display: inline-block;
 	max-width: 350px;
 	font-family: 'Roboto', sans-serif;
@@ -90,7 +90,7 @@
 	padding-left: 0;
 	margin-left: 10px;
 }
-.favorite_description:after{
+.search_description:after{
 	content: "";
 	position: absolute;
 	left: 0;
@@ -99,7 +99,7 @@
 	height: 40px;
 	background: linear-gradient(180deg, transparent, #fff5ec 50%);
 }
-.favorite_tags{
+.search_tags{
 	max-width: 350px;
 	margin-left: 10px;
 	margin-bottom: 15px;
