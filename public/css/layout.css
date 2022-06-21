@@ -16,7 +16,7 @@ header{
 .header_menu_points{
 	display: flex;
 }
-.header_menu_points__point{
+.header_menu_points__point,.header_user_menu__link{
 	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
 	margin: 10px;
@@ -25,7 +25,7 @@ header{
 	cursor: pointer;
 	text-decoration: none;
 }
-.header_menu_points__point:after{
+.header_menu_points__point:after,.header_user_menu__link:after{
 	content: "";
 	display: block;
 	position: absolute;
@@ -36,7 +36,7 @@ header{
 	background-color: #00000099;
 	transition: width 0.5s;
 }
-.header_menu_points__point:hover:after {
+.header_menu_points__point:hover:after,.header_user_menu__link:hover:after {
 	content: "";
 	width: 100%;
 	display: block;

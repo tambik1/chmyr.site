@@ -35,14 +35,18 @@
 				<button class="header_menu_search__button" type="submit"></button>
 			</form>
 		</div>
+<!--		todo реализовать-бизнес логику, если юзер авторизован показывать его данные, если нет - ссылку на авторизацию-->
+<!--		<div class="header_user_menu">-->
+<!--			<div class="header_user_menu_photo">-->
+<!--				<a href="#"><img class="header_user_menu_photo__img" src="/public/img/layout_img/user_photo__test.jpg" alt="user-photo"></a>-->
+<!--			</div>-->
+<!--			<div class="header_user_menu_fio">-->
+<!--				<a class="header_user_menu_fio_name__a" href="#"><span class="header_user_menu_fio_name">Вася</span></a>-->
+<!--				<a class="header_user_menu_fio_surname__a" href="#"><span class="header_user_menu_fio_surname">Пупкин</span></a>-->
+<!--			</div>-->
+<!--		</div>-->
 		<div class="header_user_menu">
-			<div class="header_user_menu_photo">
-				<a href="#"><img class="header_user_menu_photo__img" src="/public/img/layout_img/user_photo__test.jpg" alt="user-photo"></a>
-			</div>
-			<div class="header_user_menu_fio">
-				<a class="header_user_menu_fio_name__a" href="#"><span class="header_user_menu_fio_name">Вася</span></a>
-				<a class="header_user_menu_fio_surname__a" href="#"><span class="header_user_menu_fio_surname">Пупкин</span></a>
-			</div>
+			<a class="header_user_menu__link" href="/auth">Войти</a>
 		</div>
 	</header>
 	<div class="content">

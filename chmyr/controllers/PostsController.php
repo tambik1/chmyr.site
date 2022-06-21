@@ -5,9 +5,15 @@ use Chmyr\Core\Response;
 
 class PostsController extends Controller
 {
-	public function Posts(): Response
+	public function posts(): Response
 	{
 		$this->setTitle("Новости");
 		return $this->render("blocks/_posts");
 	}
+	public function create(): Response
+	{
+		$this->setTitle("Новый пост");
+		return $this->render("blocks/_creator");
+	}
+
 }

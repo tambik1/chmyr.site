@@ -5,7 +5,7 @@ use Chmyr\Core\Response;
 
 class AboutController extends Controller
 {
-	public function About(): Response
+	public function about(): Response
 	{
 		$this->setTitle("О проекте");
 		return $this->render("blocks\\_about");

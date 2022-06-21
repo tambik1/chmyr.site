@@ -1,0 +1,39 @@
+.auth_container{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-content: center;
+	align-items: center;
+	background-color: #ffffff9c;
+	box-shadow: rgb(0 0 0 / 35%) 0 5px 15px;
+	margin: 30px;
+	border-radius: 30px;
+	width: 300px;
+	height: 230px;
+	justify-content: space-between;
+}
+.auth_form{
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+	justify-content: space-around;
+}
+.auth_container_title{
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	color: #00000099;
+	margin-top: 15px;
+}
+.auth_container_login_title,.auth_container_password_title{
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	color: #00000099;
+	margin: 10px;
+}
+.auth_container_login,.auth_container_password {
+
+}
+.auth_container_submit__button{
+	margin: 20px;
+}

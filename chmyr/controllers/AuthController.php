@@ -6,7 +6,7 @@ use Chmyr\Core\Response;
 
 class AuthController extends Controller
 {
-	public function Auth(): Response
+	public function auth(): Response
 	{
 		$this->setTitle("Авторизация");
 		return $this->render("blocks\\_auth");
