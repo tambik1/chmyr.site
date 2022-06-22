@@ -33,7 +33,7 @@
 	font-size: 18px;
 	color: #00000099;
 }
-.detailed_post_menu_author__surname{
+.detailed_post_menu_author__surname,.comment_author_menu_fio__surname{
 	margin-left: 0;
 }
 .detailed_post_menu_author__date,.comment_author_menu_date{
@@ -97,6 +97,10 @@
 	align-content: center;
 	align-items: center;
 	margin: 20px;
+	background-color: #fff;
+	border-radius: 30px;
+	max-width: 500px;
+	box-shadow: rgb(0 0 0 / 35%) 0 5px 15px;
 }
 .comment_author_menu{
 	display: flex;
@@ -104,4 +108,22 @@
 	align-content: center;
 	align-items: center;
 	justify-content: flex-start;
+}
+.comment_author_menu__description{
+	display: inline-block;
+	max-width: 500px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	text-align: justify;
+	padding: 1rem;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	padding-left: 0;
+	margin-left: 10px;
+}
+.comments_title{
+	font-family: 'Roboto', sans-serif;
+	font-size: 28px;
+	color: #00000099;
 }

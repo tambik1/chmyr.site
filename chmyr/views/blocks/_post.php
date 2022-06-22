@@ -35,6 +35,10 @@
 		</div>
 	</div>
 
+	<div class="comments_title">
+		Комментарии
+	</div>
+
 	<div class="detailed_post_comments_container">
 		<div class="comment_container">
 			<div class="comment_author_menu">
