@@ -1,0 +1,107 @@
+.detailed_posts_container {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-content: center;
+	align-items: center;
+	margin: 20px;
+}
+.detailed_post_container{
+	margin: 20px;
+	border-radius: 30px;
+	background-color: #ffffff9c;
+	box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+.detailed_post_menu_author{
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	align-content: center;
+	justify-content: flex-start;
+	align-items: center;
+	border-bottom: solid 1px #ddd;
+}
+.detailed_post_menu_author__photo,.comment_author__photo{
+	margin: 15px;
+	height: 40px;
+	width: 40px;
+	border-radius: 30px;
+}
+.detailed_post_menu_author__name,.detailed_post_menu_author__surname,.comment_author_menu_fio__name,.comment_author_menu_fio__surname{
+	margin: 5px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	color: #00000099;
+}
+.detailed_post_menu_author__surname{
+	margin-left: 0;
+}
+.detailed_post_menu_author__date,.comment_author_menu_date{
+	margin-left: 15px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #00000099;
+}
+.detailed_post_menu_settings{
+	position: absolute;
+	top: 27px;
+	right: 25px;
+}
+.detailed_post_title__a{
+	text-decoration: none;
+	color: black;
+	transition: .5s linear;
+}
+.detailed_post_title__a:hover{
+	color: #ddd;
+}
+.detailed_post_title:hover{
+	color: #ddd;
+}
+.detailed_post_title{
+	margin: 10px;
+	text-align: center;
+	max-width: 500px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	transition: .5s linear;
+}
+.detailed_post_description{
+	display: inline-block;
+	max-width: 500px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	text-align: justify;
+	padding: 1rem;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	padding-left: 0;
+	margin-left: 10px;
+}
+.detailed_post_tags{
+	max-width: 500px;
+	margin-left: 10px;
+	margin-bottom: 15px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	color: #00000099;
+}
+.comment_container{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-content: center;
+	align-items: center;
+	margin: 20px;
+}
+.comment_author_menu{
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: flex-start;
+}

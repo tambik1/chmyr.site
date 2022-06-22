@@ -1,0 +1,33 @@
+.creator_container{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-content: center;
+	align-items: center;
+	background-color: #ffffff9c;
+	box-shadow: rgb(0 0 0 / 35%) 0 5px 15px;
+	margin: 30px;
+	border-radius: 30px;
+	width: 600px;
+	justify-content: space-evenly;
+}
+.creator_form{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.creator_title{
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	color: #00000099;
+	margin-top: 15px;
+}
+.creator_form_title__title,.creator_form_title__description{
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	color: #00000099;
+	margin: 10px;
+}
+.creator_form__submit{
+	margin: 20px;
+}

@@ -10,6 +10,11 @@ class PostsController extends Controller
 		$this->setTitle("Новости");
 		return $this->render("blocks/_posts");
 	}
+	public function postById(): Response
+	{
+		$this->setTitle("Деталочка");
+		return $this->render("blocks/_post");
+	}
 	public function create(): Response
 	{
 		$this->setTitle("Новый пост");
