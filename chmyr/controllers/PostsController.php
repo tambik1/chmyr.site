@@ -2,13 +2,25 @@
 namespace Chmyr\Controllers;
 use Chmyr\Core\Controller;
 use Chmyr\Core\Response;
+use Chmyr\Core\ServiceContainer;
+use Chmyr\Models\Services\PostsService;
 
 class PostsController extends Controller
 {
 	public function posts(): Response
 	{
-		$this->setTitle("Новости");
-		return $this->render("blocks/_posts");
+		/** @var PostsService $postsService */
+		$postsService = ServiceContainer::get("posts");
+		$data =$postsService->getAll();
+		if (isset($data))
+		{
+			$this->setTitle("Новости");
+			return $this->render('blocks/_posts', [
+				'posts' => $data,
+
+			]);
+		}
+		return $this->render('layout/404');
 	}
 	public function postById(): Response
 	{

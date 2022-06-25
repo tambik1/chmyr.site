@@ -1,3 +1,10 @@
+<?php
+/** @var \Chmyr\Models\Entities\PostsEntity $posts */
+
+var_dump($posts);
+
+?>
+
 <div class="content_container">
 	<div class="posts_container">
 		<div class="post_container">

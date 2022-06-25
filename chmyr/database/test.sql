@@ -1,14 +1,7 @@
-CREATE TABLE `test`.`user` (
-			`ID` INT NOT NULL AUTO_INCREMENT ,
-			`NAME` INT NOT NULL , `SURNAME` INT NULL ,
-			`LOGIN` INT NOT NULL , `PASSWORD` INT NOT NULL ,
-			`PHOTO` INT NULL ,
-			`COMMENT_ID` INT NULL ,
-			 PRIMARY KEY (`ID`));
-CREATE TABLE `test`.`posts` (
-			`ID` INT(11) NOT NULL AUTO_INCREMENT ,
-			`TITLE` VARCHAR(255) NOT NULL ,
-			`DESCRIPTION` VARCHAR(255) NOT NULL ,
-			`DATA CREATE` DATE NOT NULL ,
-			`DATA UPDATE` DATE NOT NULL ,
-			 PRIMARY KEY (`ID`)) ;
+# Получение всех постов
+SELECT * FROM posts;
+# Получение поста по id
+SELECT * FROM posts WHERE ID = 1;
+# Получение всех комментариев, к посту
+SELECT * FROM comments WHERE POST_ID = 3;
+

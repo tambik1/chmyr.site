@@ -4,5 +4,5 @@ return [
 	'host' => 'localhost',
 	'userName' => 'student',
 	'password' => 'student',
-	'dbName' => 'chmyr',
+	'dbName' => 'chmyr.site',
 ];
