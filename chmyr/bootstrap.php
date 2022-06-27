@@ -7,6 +7,7 @@ spl_autoload_register("\\Autoloader::loader");
 
 // Load configuration files
 use Chmyr\core\Config;
+require_once 'chmyr/config/services.php';
 
 
 

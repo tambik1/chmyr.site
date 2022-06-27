@@ -1,5 +1,6 @@
 <?php
 namespace Chmyr\Models\Entities;
+use Chmyr\Models\Entity;
 
 class PostsEntity
 {
@@ -11,6 +12,16 @@ class PostsEntity
 	public string $photo = '';
 	public string $author_id = '';
 
+	public function __construct($data = [])
+	{
+		foreach ($data as $key => $value)
+		{
+			if (property_exists($this, $key))
+			{
+				$this->{$key} = $value;
+			}
+		}
+	}
 
 	public function getId(): string
 	{

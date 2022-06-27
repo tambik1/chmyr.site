@@ -8,26 +8,21 @@ use Chmyr\Logger;
 class Database
 {
 
-	protected static Database $instance;
 	public const RESULT_ASSOC = MYSQLI_ASSOC;
 	private mysqli $connection;
 
-	private static array $config = [
+	public static array $config = [
 		'host' => 'localhost',
 		'userName' => 'student',
 		'password' => 'student',
-		'dbName' => 'chmyr.site',
+		'dbName' => 'chmyr',
 	];
 
-	private function __construct()
+	public function __construct()
 	{
 		$this->openConnection();
 	}
 
-	public static function getInstance()
-	{
-		return isset(static::$instance) ? static::$instance : static::$instance = new static();
-	}
 	public static function setConfig(array $config): void
 	{
 		self::$config = $config;

@@ -4,6 +4,7 @@ namespace Chmyr\Core;
 
 use Chmyr\Logger\Logger;
 use Chmyr\Helpers\Session;
+
 class Application
 {
 	public static string $ROOT_DIR;

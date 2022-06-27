@@ -9,10 +9,10 @@ use Chmyr\Models\Entities\PostsEntity;
 class PostsService
 {
 
-	public function getAll(): array
+	public function getAll():array
 	{
 
-		/** @var Database $db */
+		$db = new Database();
 
 		return Mapper::map($db->getQuery("SELECT * FROM posts"), PostsEntity::class);
 	}
