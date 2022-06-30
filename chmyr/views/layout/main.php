@@ -24,7 +24,7 @@
 <!--			TODO - Подумать, стоит ли вынести пункты меню в конфиг и выводить динамически-->
 			<div class="header_menu_points">
 				<a class="header_menu_points__point" href="/">Главная</a>
-				<a class="header_menu_points__point" href="#">Новое</a>
+<!--				<a class="header_menu_points__point" href="#">Новое</a>-->
 				<a class="header_menu_points__point" href="/favorite">Избранное</a>
 				<a class="header_menu_points__point" href="/about">О проекте</a>
 			</div>

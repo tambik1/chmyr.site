@@ -1,6 +1,6 @@
 <?php
 
-namespace Chmyr\Models\Entity;
+namespace Chmyr\Models\Entities;
 
 abstract class Entity
 {
@@ -17,7 +17,6 @@ abstract class Entity
 		}
 	}
 
-	abstract public static function rules(): array;
 
 	public function isValid(): bool
 	{

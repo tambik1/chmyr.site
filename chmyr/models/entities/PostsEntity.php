@@ -1,8 +1,7 @@
 <?php
 namespace Chmyr\Models\Entities;
-use Chmyr\Models\Entity;
 
-class PostsEntity
+class PostsEntity extends Entity
 {
 	public string $id = '';
 	public string $title = '';
@@ -11,17 +10,11 @@ class PostsEntity
 	public string $date_update = '';
 	public string $photo = '';
 	public string $author_id = '';
+	public string $name = '';
+	public string $surname = '';
+	public string $user_photo = '';
+	public string $tags_name = '';
 
-	public function __construct($data = [])
-	{
-		foreach ($data as $key => $value)
-		{
-			if (property_exists($this, $key))
-			{
-				$this->{$key} = $value;
-			}
-		}
-	}
 
 	public function getId(): string
 	{
@@ -62,18 +55,37 @@ class PostsEntity
 		$this->description = $description;
 	}
 
+	public function getName(): string
+	{
+		return $this->name;
+	}
+
+	/**
+	 * @param string $name
+	 */
+	public function setName(string $name): void
+	{
+		$this->name = $name;
+	}
+
+	public function getSurname(): string
+	{
+		return $this->surname;
+	}
+
+	/**
+	 * @param string $surname
+	 */
+	public function setSurname(string $surname): void
+	{
+		$this->surname = $surname;
+	}
+
 	public function getDateCreate(): string
 	{
 		return $this->date_create;
 	}
 
-	/**
-	 * @param string $date_create
-	 */
-	public function setDateCreate(string $date_create): void
-	{
-		$this->date_create = $date_create;
-	}
 
 	public function getDateUpdate(): string
 	{
@@ -81,37 +93,17 @@ class PostsEntity
 	}
 
 	/**
-	 * @param string $date_Update
+	 * @param string $tags
 	 */
-	public function setDateUpdate(string $date_update): void
+	public function setTags(string $tags_name): void
 	{
-		$this->date_create = $date_update;
+		$this->tags_name = $tags_name;
+	}
+	public function getTags(): string
+	{
+		return $this->tags_name;
 	}
 
-	public function getPhoto(): string
-	{
-		return $this->photo;
-	}
 
-	/**
-	 * @param string $photo
-	 */
-	public function setPhoto(string $photo): void
-	{
-		$this->id = $photo;
-	}
-
-	public function getAuthorId(): string
-	{
-		return $this->author_id;
-	}
-
-	/**
-	 * @param string $id
-	 */
-	public function setAuthorId(string $author_id): void
-	{
-		$this->id = $author_id;
-	}
 
 }
