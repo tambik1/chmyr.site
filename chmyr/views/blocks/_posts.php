@@ -34,9 +34,7 @@
 				<?= $post->getDescription() ?>
 			</div>
 			<div class="post_tags">
-				<?php  $tagsArray = explode(',',$post->getTags());
-				$tagsArray;
-				?>
+				<?php  $tagsArray = explode(',',$post->getTags());?>
 				<?php foreach ($tagsArray as $tag):?>
 					<a class="post_tags__tag_link" href="#<?php echo $tag ?>"><span class="post_tags__tag"><?php echo $tag ?></span></a>
 				<?php endforeach;?>

@@ -24,8 +24,20 @@ class PostsController extends Controller
 	}
 	public function postById(): Response
 	{
-		$this->setTitle("Деталочка");
-		return $this->render("blocks/_post");
+		$postsService = ServiceContainer::get("posts");
+		$commentsService = ServiceContainer::get("comments");
+		$postData = $postsService->getPostById();
+		$commentsData = $commentsService->getAllCommentsByPostId();
+		if (isset($postData))
+		{
+			$this->setTitle("Деталочка");
+			return $this->render('blocks/_post', [
+				'posts' => $postData,
+				'comments'=> $commentsData
+
+			]);
+		}
+		return $this->render('layout/404');
 	}
 	public function create(): Response
 	{

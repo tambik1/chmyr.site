@@ -21,10 +21,8 @@
 			<a href="/"><img class="header_logo__img" src="/public/img/layout_img/chmyr_logo.png" alt="logo"></a>
 		</div>
 		<div class="header_menu">
-<!--			TODO - Подумать, стоит ли вынести пункты меню в конфиг и выводить динамически-->
 			<div class="header_menu_points">
 				<a class="header_menu_points__point" href="/">Главная</a>
-<!--				<a class="header_menu_points__point" href="#">Новое</a>-->
 				<a class="header_menu_points__point" href="/favorite">Избранное</a>
 				<a class="header_menu_points__point" href="/about">О проекте</a>
 			</div>
@@ -35,19 +33,23 @@
 				<button class="header_menu_search__button" type="submit"></button>
 			</form>
 		</div>
-<!--		todo реализовать-бизнес логику, если юзер авторизован показывать его данные, если нет - ссылку на авторизацию-->
-<!--		<div class="header_user_menu">-->
-<!--			<div class="header_user_menu_photo">-->
-<!--				<a href="#"><img class="header_user_menu_photo__img" src="/public/img/layout_img/user_photo__test.jpg" alt="user-photo"></a>-->
-<!--			</div>-->
-<!--			<div class="header_user_menu_fio">-->
-<!--				<a class="header_user_menu_fio_name__a" href="#"><span class="header_user_menu_fio_name">Вася</span></a>-->
-<!--				<a class="header_user_menu_fio_surname__a" href="#"><span class="header_user_menu_fio_surname">Пупкин</span></a>-->
-<!--			</div>-->
-<!--		</div>-->
-		<div class="header_user_menu">
-			<a class="header_user_menu__link" href="/auth">Войти</a>
-		</div>
+		<?php if ($_SESSION['user']): ?>
+					<div class="header_user_menu">
+						<div class="header_user_menu_photo">
+							<a href="/profile"><img class="header_user_menu_photo__img" src="<?=$_SESSION['user']['photo']?>" alt="user-photo"></a>
+						</div>
+						<div class="header_user_menu_fio">
+							<a class="header_user_menu_fio_name__a" href="/profile"><span class="header_user_menu_fio_name"><?=$_SESSION['user']['name']?></span></a>
+							<a class="header_user_menu_fio_surname__a" href="/profile"><span class="header_user_menu_fio_surname"><?=$_SESSION['user']['surname']?></span></a>
+						</div>
+					</div>
+		<?php else: ?>
+			<div class="header_user_menu">
+				<a class="header_user_menu__link" href="/auth">Войти</a>
+			</div>
+		<?php endif; ?>
+
+
 	</header>
 	<div class="content">
 		<?= $content ?>

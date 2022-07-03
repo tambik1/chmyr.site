@@ -7,10 +7,11 @@
 	align-items: center;
 }
 .about_title{
+	margin-top: 20px;
 	font-family: 'Roboto', sans-serif;
-	font-size: 24px;
-	color: #000;
-	margin: 25px;
+	font-size: 28px;
+	color: #00000099;
+	margin-bottom: 25px;
 }
 .about_description{
 	font-family: 'Roboto', sans-serif;

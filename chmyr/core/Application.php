@@ -23,6 +23,7 @@ class Application
 
 	public function __construct(string $rootDir)
 	{
+
 		self::$ROOT_DIR = $rootDir;
 		self::$app = $this;
 
